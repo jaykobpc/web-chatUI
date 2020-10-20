@@ -1,0 +1,47 @@
+.wxchatcard {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 7.5rem;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+  pointer-events: all;
+  padding: 1.5rem 0.5rem;
+  border-bottom: 1px solid $color-grey-100;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-grey-100;
+  }
+
+  &__imgbox {
+    margin: 0px 15px 0px 13px;
+
+    &--img {
+      object-fit: cover;
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__textview {
+    margin: 0;
+
+    &--title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.0255rem;
+      color: $color-grey-600;
+      line-height: 2rem;
+    }
+
+    &--smtext {
+      line-height: 2rem;
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: $color-grey-600;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.notificationview {
+    background: linear-gradient(
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15)
+    );
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    visibility: hidden;
+    opacity: 0;
+
+    &__container {
+        width: 55rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-white;
+        border-radius: 0.5rem;
+        padding-bottom: 2rem;
+        //overflow-y: scroll;
+    }
+
+    &__titlebox {
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+
+        &--iconview {
+            @include icon-button;
+            transition: background-color 0.3s;
+            fill: $color-grey-600;
+ 
+            &:hover {
+                background-color: $color-grey-200;
+            }
+        }
+
+        &--text {
+            margin-left: -1rem;
+            flex: 1;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: 0.065rem;
+            color: $color-grey-600;
+        }
+    }
+
+    &__listview {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+        height: 40rem;
+        padding-bottom: 2rem;
+        overflow-y: scroll;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: row;
+        transition: background-color 0.3s;
+        padding: 0.7rem 0.3rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        border-radius: 0.4rem;
+        //box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.15);
+        border: 1px solid $color-grey-200;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-grey-100;
+        }
+    }
+
+    &__imgbox {
+        margin: 0 1rem;
+
+        &--img {
+            border-radius: 50%;
+            width: 6rem;
+            height: 6rem;
+            object-fit: cover;
+        }
+    }
+
+    &__textview {
+        text-align: left;
+        padding-top: 0.4rem;
+
+        &--title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: $color-grey-600;
+        }
+    }
+
+    &__btnlist {
+        display: flex;
+        flex-direction: row;
+        padding-top: 1rem;
+
+        &--btn {
+            border: none;
+            font-family: inherit;
+            font-size: 1.3rem;
+            color: $color-grey-200;
+            padding: 0.5rem;
+            margin: 0 0.3rem;
+            border-radius: 0.3rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.accept-light {
+    background-color: $color-green-600;
+}
+
+.decline-light {
+    background-color: $color-red-500;
+}
+
+.notificationview_open.notificationview  {
+    visibility: visible;
+    opacity: 1;
+}

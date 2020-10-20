@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4b64f2">
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="./css/app.build.css" rel="stylesheet">
+    <title>Chat-app/Home</title>
+</head>
+
+<body translate="no" class="no-select">
+
+    <div id="app">
+        <!--fixed side navigation-->
+        <aside class="sidebar">
+            <div class="sidebar__container">
+                <div class="sidebar__iconview">
+                    <img draggable="false" src="./img/chat_logo.png" alt="Logo" class="sidebar__iconview--img">
+                </div>
+                <div class="sidebar__widgets">
+                    <div title="Explore" class="sidebar__icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z" />
+                        </svg>
+                    </div>
+                    <div title="New Chat" class="sidebar__icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                    </div>
+                    <div title="Notifications" class="sidebar__icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path
+                                d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+                        </svg>
+                    </div>
+                    <div title="Settings" class="sidebar__icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                            viewBox="0 0 24 24" width="24">
+                            <g>
+                                <path d="M0,0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar__wxwidget">
+                    <div title="Logout" class="sidebar__icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--mainview-->
+        <main class="wxmain">
+            <div class="navbar">
+                <div class="navbar__titlebox">
+                    <h3 class="navbar__titlebox--text">Lithium</h3>
+                </div>
+                <div class="navbar__widgets">
+                    <div class="navbar__profile-icon">
+                        <img draggable="false" src="./img/profile_img.jpeg" alt="Profile Image"
+                            class="navbar__profile-icon--img">
+                    </div>
+                </div>
+            </div>
+            <div class="wxcontainer">
+                <!--chat tab select-->
+                <div class="wxchattabs">
+                    <div class="wxchattabs__titlebox">
+                        <h3 class="wxchattabs__titlebox--text">All Conversations</h3>
+                    </div>
+                    <div class="wxchattabs__tabview">
+                        <div title="Recent" class="wxchattabs__tab selected_tab">
+                            <p class="wxchattabs__tab--text">Recent</p>
+                        </div>
+                        <div title="Archives" class="wxchattabs__tab">
+                            <p class="wxchattabs__tab--text">Archived</p>
+                        </div>
+                        <div title="Blocked" class="wxchattabs__tab">
+                            <p class="wxchattabs__tab--text">Blocked</p>
+                        </div>
+                    </div>
+                    <!--search bar-->
+                    <div class="wxchattabs__searchbox display-none">
+                        <div class="wxchattabs__search">
+                            <div class="wxchattabs__search--icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                                </svg>
+                            </div>
+                            <input type="text" placeholder="Search here..." autocomplete="false"
+                                class="wxchattabs__search--input">
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="wxchattabs__chatlist">
+                        <div class="wxchatcard">
+                            <div class="wxchatcard__imgbox">
+                                <img draggable="false" src="./img/profile_img.jpeg" alt="Profile"
+                                    class="wxchatcard__imgbox--img no-grab">
+                            </div>
+                            <div class="wxchatcard__textview">
+                                <h3 class="wxchatcard__textview--title">Jaykob watenga</h3>
+                                <p class="wxchatcard__textview--smtext">3 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--chat view-->
+                <div class="wxchatview">
+                    <div class="wxchatview__bgimage"></div>
+                    <div class="wxchatview__header">
+                        <div class="wxchatview__header-container">
+                            <div class="wxchatview__wxbox">
+                                <div class="wxchatview__imgbox">
+                                    <img draggable="false" src="./img/profile_img.jpeg" alt="Profile image"
+                                        class="wxchatview__imgbox--img">
+                                </div>
+                                <div class="wxchatview__textview">
+                                    <h3 class="wxchatview__textview--title">Jaykob watenga</h3>
+                                    <p class="wxchatview__textview--smtext">3 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="wxchatview__widgets">
+                                <div class="wxchatview__icon-view">
+                                    <div id="options" class="wxchatview__icon-view--icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                            width="24">
+                                            <path d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="wxchatview__option-widget">
+                                        <div title="Delete Chat" class="wxchatview__option-widget--item">
+                                            <p class="wxchatview__option-widget--text">Delete Chat</p>
+                                        </div>
+                                        <div title="Block User" class="wxchatview__option-widget--item">
+                                            <p class="wxchatview__option-widget--text">Archive Chat</p>
+                                        </div>
+                                        <div title="Block User" class="wxchatview__option-widget--item">
+                                            <p class="wxchatview__option-widget--text">Block</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wxchatview__chat-container">
+                        <div class="wxchatview__chat-group">
+                            <div class="wxchatview__chat-widget align-flex-start">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-receiver-bg">
+                                        <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolorum
+                                            adipisci quo aliquid, officiis saepe?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wxchatview__chat-widget align-flex-end">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-sender-bg">
+                                        <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, velit
+                                            harum earum pariatur ab aut, unde eligendi quod recusandae repellat nemo
+                                            cumque, laudantium omnis aliquam?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wxchatview__chat-widget align-flex-start">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-receiver-bg">
+                                        <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolorum
+                                            adipisci quo aliquid, officiis saepe?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wxchatview__chat-widget align-flex-end">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-sender-bg">
+                                        <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, velit
+                                            harum earum pariatur ab aut, unde eligendi quod recusandae repellat nemo
+                                            cumque, laudantium omnis aliquam?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wxchatview__chat-widget align-flex-start">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-receiver-bg">
+                                        <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolorum
+                                            adipisci quo aliquid, officiis saepe?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wxchatview__chat-widget align-flex-end">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-sender-bg">
+                                        <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, velit
+                                            harum earum pariatur ab aut, unde eligendi quod recusandae repellat nemo
+                                            cumque, laudantium omnis aliquam?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wxchatview__chat-widget align-flex-end">
+                                <div class="wxchatview__chat-intent">
+                                    <div class="wxchatview__chat-intent--header">
+                                        <p class="wxchatview__chat-intent--smtext">21:59 PM</p>
+                                    </div>
+                                    <div class="wxchatview__chat-intent--content chat-sender-bg">
+                                        <!-- <p class="wxchatview__chat-intent--content__text">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, velit
+                                            harum earum pariatur ab aut, unde eligendi quod recusandae repellat nemo
+                                            cumque, laudantium omnis aliquam?
+                                        </p> -->
+                                        <img src="./img/profile_img.jpeg" class="wxchatview__chat-intent--img"
+                                            alt="Chat load">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wxchatview__chat-box">
+                        <div class="wxchatview__chat-box--container">
+                            <div title="Attach" class="wxchatview__chat-box--iconview">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z" />
+                                </svg>
+                            </div>
+                            <div class="wxchatview__chat-box--boxview">
+                                <input type="text" name="chat" placeholder="Type a message..."
+                                    class="wxchatview__chat-box--input">
+                            </div>
+                            <div class="wxchatview__chat-box--widgets">
+                                <div title="Audio Records" class="wxchatview__chat-box--iconview">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--add contacts modal-->
+        <div class="contactview">
+            <div class="contactview__container">
+                <div title="Back" class="contactview__header">
+                    <div class="contactview__header--iconview">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="contactview__searchbox">
+                    <input type="text" name="search" placeholder="Find people..." class="contactview__searchbox--input">
+                </div>
+                <div class="contactview__output-grid">
+                    <div v-for="(n,index) in 2" :key="index" class="contactview__card-view">
+                        <div class="contactview__imgbox">
+                            <img src="./img/profile_img.jpeg" alt="Debbie" class="contactview__imgbox--img">
+                        </div>
+                        <div class="contactview__textview">
+                            <h3 class="contactview__textview--text">Jaykob watenga</h3>
+                            <p class="contactview__textview--smtext">@jaykob_w</p>
+                        </div>
+                        <div class="contactview__btn-view">
+                            <button title="Add Contact" class="contactview__btn-view--add">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--notifications modal-->
+        <div class="notificationview">
+            <div class="notificationview__container">
+                <div class="notificationview__titlebox">
+                    <div title="Back" class="notificationview__titlebox--iconview">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
+                        </svg>
+                    </div>
+                    <h3 class="notificationview__titlebox--text">Notifications</h3>
+                </div>
+                <div class="notificationview__listview">
+                    <div v-for="(n,index) in 5" :key="index" class="notificationview__card">
+                        <div class="notificationview__imgbox">
+                            <img src="./img/profile_img.jpeg" alt="Artchung" class="notificationview__imgbox--img">
+                        </div>
+                        <div class="notificationview__textview">
+                            <h3 class="notificationview__textview--title">@jaykobpc has requested to chat</h3>
+                            <div class="notificationview__btnlist">
+                                <button class="notificationview__btnlist--btn accept-light">Accept</button>
+                                <button class="notificationview__btnlist--btn decline-light">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/app.js" defer></script>
+</body>
+
+</html>

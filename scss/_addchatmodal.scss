@@ -1,0 +1,132 @@
+.contactview {
+    background: linear-gradient(
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15)
+    );
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    visibility: hidden;
+    opacity: 0;
+
+    &__container {
+        margin: 8.5rem auto 0rem auto;
+        width: 60rem;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        background-color: $color-white;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.5rem;
+        padding-bottom: 2rem;
+        overflow-y: scroll;
+    }
+
+    &__header {
+        padding: 1.1rem 0rem;
+
+        &--iconview {
+           @include icon-button;
+           transition: background-color 0.3s;
+           fill: $color-grey-600;
+
+           &:hover {
+               background-color: $color-grey-200;
+           }
+        }
+    }
+
+    &__searchbox {
+        padding: 0.5rem 0.5rem;
+
+        &--input {
+            padding: 1.5rem 1rem;
+            border: none;
+            width: 100%;
+            color: $color-grey-600;
+            border: 1px solid $color-grey-200;
+            border-radius: 0.6rem;
+            font-family: inherit;
+            font-size: 1.3rem;
+        }
+    }
+
+    &__output-grid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        overflow-y: scroll;
+        max-height: 33rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    &__card-view {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: background-color 0.3s;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-grey-100;
+        }
+    }
+
+    &__imgbox {
+        margin-right: auto;
+
+        &--img {
+            width: 6.5rem;
+            height: 6.5rem;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    &__textview {
+        flex: 1;
+        text-align: left;
+        padding-left: 0.8rem;
+
+        &--text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: $color-grey-600;
+            line-height: 2rem;
+        }
+
+        &--smtext {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: $color-grey-600;
+            line-height: 1.5rem;
+        }
+    }
+
+    &__btn-view {
+        text-align: center;
+
+        &--add {
+            border: none;
+            padding: 0.5rem 0.8rem;
+            box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.15);
+            background-color: $color-blue-500;
+            border-radius: 0.3rem;
+            fill: $color-grey-200;
+            cursor: pointer;
+        }
+    }
+}
+
+.contactsearch_open.contactview {
+    opacity: 1;
+    visibility: visible;
+}

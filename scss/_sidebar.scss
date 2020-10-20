@@ -1,0 +1,47 @@
+.sidebar {
+    //position: fixed;
+    height: 100%;
+    background-color: #1c262f;
+    z-index: 999;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0.5rem;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    &__iconview {
+        margin-bottom: auto;
+        padding: 1rem 0.8rem;
+        
+        &--img {
+            object-fit: cover;
+            width: 35px;
+        }
+    }
+
+    &__widgets {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: auto;
+    }
+
+    &__icon-button {
+        text-align: center;
+        padding: 1.3rem 1.3rem;
+        fill: $color-grey-200;
+        cursor: pointer;
+        border-radius: 0.4rem;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: #283744;
+        }
+    }
+
+    &__wxwidget {
+        margin: 0;
+    }
+}
