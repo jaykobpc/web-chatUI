@@ -12,7 +12,7 @@
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: $color-grey-100;
+    background-color: rgba($color-grey-300, 0.25);
   }
 
   &__imgbox {

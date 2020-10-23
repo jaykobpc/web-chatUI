@@ -1,3 +1,14 @@
+/** 
+*animation
+*/
+@keyframes animate_hover {
+  0% {
+    transform: translateY(-18px); }
+  50% {
+    transform: translateY(0px); }
+  100% {
+    transform: translateY(-18px); } }
+
 *,
 *::before,
 *::after {
@@ -91,7 +102,7 @@ img {
   border-bottom: 1px solid #F5F5F5;
   transition: background-color 0.3s; }
   .wxchatcard:hover {
-    background-color: #F5F5F5; }
+    background-color: rgba(224, 224, 224, 0.25); }
   .wxchatcard__imgbox {
     margin: 0px 15px 0px 13px; }
     .wxchatcard__imgbox--img {
@@ -134,7 +145,8 @@ img {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.15); }
+    background-color: #F5F5F5;
+    box-shadow: 0px 2px 4px -10px rgba(117, 117, 117, 0.3); }
   .wxchattabs__tab {
     padding: 1.7rem 0;
     text-align: center;
@@ -191,7 +203,49 @@ img {
   flex: 75%;
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+  .wxchatview__wrapper {
+    background-color: #F5F5F5;
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2;
+    visibility: visible;
+    opacity: 1; }
+    .wxchatview__wrapper-container {
+      text-align: center; }
+      .wxchatview__wrapper-container--img {
+        border-radius: 50%;
+        width: 150px;
+        object-fit: cover;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s;
+        animation-name: animate_hover;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out; }
+      .wxchatview__wrapper-container--text {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2rem;
+        color: #757575;
+        letter-spacing: 0.065rem; }
+      .wxchatview__wrapper-container--smtext {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #4CAF50; }
   .wxchatview__option-widget {
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
@@ -232,7 +286,7 @@ img {
   .wxchatview__header {
     background-color: #F5F5F5;
     padding: 1.1rem 0.6rem;
-    z-index: 999;
+    z-index: 99;
     position: relative;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.15); }
   .wxchatview__header-container {
@@ -348,7 +402,7 @@ img {
   .wxchatview__chat-intent {
     max-width: 40rem;
     position: relative;
-    margin-bottom: 0.8rem; }
+    margin-bottom: 1rem; }
     .wxchatview__chat-intent--header {
       display: flex;
       flex-direction: row;
@@ -358,15 +412,16 @@ img {
       font-size: 1rem;
       color: #9E9E9E; }
     .wxchatview__chat-intent--content {
-      padding: 1.3rem 0.6rem;
+      padding: 0.5rem;
       border-radius: 0.4rem; }
       .wxchatview__chat-intent--content__text {
         font-size: 1.3rem;
+        padding: 0.5rem 0rem;
         font-weight: 400;
         line-height: 1.7rem;
         color: #EEEEEE; }
     .wxchatview__chat-intent--img {
-      max-width: 350px;
+      max-width: 30rem;
       object-fit: cover;
       border-radius: 0.3rem;
       cursor: pointer; }
@@ -386,6 +441,13 @@ img {
 .widget_open.wxchatview__option-widget {
   opacity: 1;
   visibility: visible; }
+
+/*
+* main wrapper
+*/
+.wrapper_show.wxchatview__wrapper {
+  opacity: 0;
+  visibility: hidden; }
 
 .wxmain {
   width: 100%;

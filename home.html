@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,Chrome=11">
     <meta name="theme-color" content="#4b64f2">
     <script src="./node_modules/vue/dist/vue.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
@@ -84,10 +84,10 @@
                         <h3 class="wxchattabs__titlebox--text">All Conversations</h3>
                     </div>
                     <div class="wxchattabs__tabview">
-                        <div title="Recent" class="wxchattabs__tab selected_tab">
+                        <div title="Recent" class="wxchattabs__tab">
                             <p class="wxchattabs__tab--text">Recent</p>
                         </div>
-                        <div title="Archives" class="wxchattabs__tab">
+                        <div title="Archives" class="wxchattabs__tab selected_tab">
                             <p class="wxchattabs__tab--text">Archived</p>
                         </div>
                         <div title="Blocked" class="wxchattabs__tab">
@@ -110,20 +110,35 @@
                     </div>
                     <!---->
                     <div class="wxchattabs__chatlist">
-                        <div class="wxchatcard">
-                            <div class="wxchatcard__imgbox">
-                                <img draggable="false" src="./img/profile_img.jpeg" alt="Profile"
-                                    class="wxchatcard__imgbox--img no-grab">
-                            </div>
-                            <div class="wxchatcard__textview">
-                                <h3 class="wxchatcard__textview--title">Jaykob watenga</h3>
-                                <p class="wxchatcard__textview--smtext">3 hours ago</p>
+                        <!--chat list default view-->
+                        <div class="wxchattabs__chatlist-default">
+
+                        </div>
+                        <!--chat list container-->
+                        <div class="wxchattabs__chatlist-container">
+                            <div class="wxchatcard">
+                                <div class="wxchatcard__imgbox">
+                                    <img draggable="false" src="./img/profile_img.jpeg" alt="Profile"
+                                        class="wxchatcard__imgbox--img no-grab">
+                                </div>
+                                <div class="wxchatcard__textview">
+                                    <h3 class="wxchatcard__textview--title">Jaykob watenga</h3>
+                                    <p class="wxchatcard__textview--smtext">3 hours ago</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--chat view-->
                 <div class="wxchatview">
+                    <div class="wxchatview__wrapper">
+                        <div class="wxchatview__wrapper-container">
+                            <img src="./img/chat_logo.png" alt="" class="wxchatview__wrapper-container--img">
+                            <h3 class="wxchatview__wrapper-container--text">Connect your world</h3>
+                            <p class="wxchatview__wrapper-container--smtext">Select chat or create a new conversation
+                            </p>
+                        </div>
+                    </div>
                     <div class="wxchatview__bgimage"></div>
                     <div class="wxchatview__header">
                         <div class="wxchatview__header-container">

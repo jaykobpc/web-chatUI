@@ -4,6 +4,61 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &__wrapper {
+    background-color: $color-grey-100;
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2;
+
+    visibility: visible;
+    opacity: 1;
+
+    &-container {
+      text-align: center;
+
+      &--img {
+        border-radius: 50%;
+        width: 150px;
+        object-fit: cover;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s;
+
+        animation-name: animate_hover;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      &--text {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2rem;
+        color: $color-grey-600;
+        letter-spacing: 0.065rem;
+      }
+
+      &--smtext {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: $color-green-500;
+      }
+    }
+  }
 
   &__option-widget {
     background-color: $color-white;
@@ -56,7 +111,7 @@
   &__header {
     background-color: $color-grey-100;
     padding: 1.1rem 0.6rem;
-    z-index: 999;
+    z-index: 99;
     position: relative;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.15);
   }
@@ -207,7 +262,7 @@
   &__chat-intent {
     max-width: 40rem;
     position: relative;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 
     &--header {
       display: flex;
@@ -222,11 +277,12 @@
     }
 
     &--content {
-      padding: 1.3rem 0.6rem;
+      padding: 0.5rem;
       border-radius: 0.4rem;
 
       &__text {
         font-size: 1.3rem;
+        padding: 0.5rem 0rem;
         font-weight: 400;
         line-height: 1.7rem;
         color: $color-grey-200;
@@ -234,7 +290,7 @@
     }
 
     &--img {
-      max-width: 350px;
+      max-width: 30rem;
       object-fit: cover;
       border-radius: 0.3rem;
       cursor: pointer;
@@ -242,6 +298,7 @@
   }
 }
 
+// as part of animations and effects
 .chat-sender-bg {
   background-color: #a7a7a7;
 }
@@ -261,4 +318,12 @@
 .widget_open.wxchatview__option-widget {
   opacity: 1;
   visibility: visible;
+}
+/*
+* main wrapper
+*/
+
+.wrapper_show.wxchatview__wrapper {
+  opacity: 0;
+  visibility: hidden;
 }
