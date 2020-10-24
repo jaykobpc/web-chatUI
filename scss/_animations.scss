@@ -2,15 +2,25 @@
 *animation
 */
 @keyframes animate_hover {
-    0% {
-      transform: translateY(-18px);
-    }
-  
-    50% {
-      transform: translateY(0px);
-    }
-  
-    100% {
-      transform: translateY(-18px);
-    }
+  0% {
+    transform: translateY(-18px);
   }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -78,3 +78,11 @@ img {
 .theme-dark {
   background-color: #262a42;
 }
+
+h1, h2, h3, h4, h5, h6, a, p, input, span, label {
+  font-family: inherit;
+}
+
+[v-cloak] {
+  display: none;
+}

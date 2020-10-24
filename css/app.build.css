@@ -3,36 +3,55 @@
 */
 @keyframes animate_hover {
   0% {
-    transform: translateY(-18px); }
+    transform: translateY(-18px);
+  }
   50% {
-    transform: translateY(0px); }
+    transform: translateY(0px);
+  }
   100% {
-    transform: translateY(-18px); } }
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 *,
 *::before,
 *::after {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 * {
   box-sizing: border-box;
-  outline: none; }
+  outline: none;
+}
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell;
+  font-family: "Roboto", Arial, Helvetica, sans-serif, -apple-system,
+    BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+}
 
 img {
   display: block;
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 .no-select {
   -webkit-touch-callout: none;
@@ -46,7 +65,8 @@ img {
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
-  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */ }
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 
 .copyable-text {
   -webkit-touch-callout: text;
@@ -60,7 +80,8 @@ img {
   -ms-user-select: text;
   /* Internet Explorer/Edge */
   user-select: text;
-  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */ }
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 
 #app {
   top: 0;
@@ -71,23 +92,47 @@ img {
   height: 100%;
   position: absolute;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 ::-webkit-scrollbar {
   width: 6px !important;
-  height: 6px !important; }
+  height: 6px !important;
+}
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2); }
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1); }
+  background: rgba(255, 255, 255, 0.1);
+}
 
 .display-none {
-  display: none; }
+  display: none;
+}
 
 .theme-dark {
-  background-color: #262a42; }
+  background-color: #262a42;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+input,
+span,
+label {
+  font-family: inherit;
+}
+
+[v-cloak] {
+  display: none;
+}
 
 .wxchatcard {
   display: flex;
@@ -99,105 +144,126 @@ img {
   cursor: pointer;
   pointer-events: all;
   padding: 1.5rem 0.5rem;
-  border-bottom: 1px solid #F5F5F5;
-  transition: background-color 0.3s; }
-  .wxchatcard:hover {
-    background-color: rgba(224, 224, 224, 0.25); }
-  .wxchatcard__imgbox {
-    margin: 0px 15px 0px 13px; }
-    .wxchatcard__imgbox--img {
-      object-fit: cover;
-      height: 5rem;
-      width: 5rem;
-      border-radius: 50%; }
-  .wxchatcard__textview {
-    margin: 0; }
-    .wxchatcard__textview--title {
-      font-size: 1.4rem;
-      font-weight: 500;
-      letter-spacing: 0.0255rem;
-      color: #757575;
-      line-height: 2rem; }
-    .wxchatcard__textview--smtext {
-      line-height: 2rem;
-      font-size: 1.15rem;
-      font-weight: 300;
-      color: #757575; }
+  border-bottom: 1px solid #f5f5f5;
+  transition: background-color 0.3s;
+}
+.wxchatcard:hover {
+  background-color: rgba(224, 224, 224, 0.25);
+}
+.wxchatcard__imgbox {
+  margin: 0px 15px 0px 13px;
+}
+.wxchatcard__imgbox--img {
+  object-fit: cover;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+.wxchatcard__textview {
+  margin: 0;
+}
+.wxchatcard__textview--title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.0255rem;
+  color: #757575;
+  line-height: 2rem;
+}
+.wxchatcard__textview--smtext {
+  line-height: 2rem;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #757575;
+}
 
 .wxchattabs {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   height: 100%;
   flex: 25%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  z-index: 999; }
-  .wxchattabs__titlebox {
-    padding: 2.5rem 0.8rem; }
-    .wxchattabs__titlebox--text {
-      font-size: 1.1rem;
-      letter-spacing: 0.095rem;
-      text-transform: uppercase;
-      color: #757575; }
-  .wxchattabs__tabview {
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    background-color: #F5F5F5;
-    box-shadow: 0px 2px 4px -10px rgba(117, 117, 117, 0.3); }
-  .wxchattabs__tab {
-    padding: 1.7rem 0;
-    text-align: center;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s; }
-    .wxchattabs__tab:hover {
-      background-color: #EEEEEE; }
-    .wxchattabs__tab--text {
-      letter-spacing: 0.075rem;
-      font-size: 1.1rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: #757575; }
-  .wxchattabs__searchbox {
-    background-color: #fff;
-    padding: 1.2rem 1.5rem;
-    border-bottom: 1px solid #F5F5F5;
-    background-color: #F5F5F5; }
-  .wxchattabs__search {
-    display: flex;
-    flex-direction: row;
-    width: 100%; }
-    .wxchattabs__search--icon {
-      position: absolute;
-      fill: #9E9E9E;
-      margin-top: 0.7rem;
-      margin-left: 0.8rem; }
-    .wxchattabs__search--input {
-      width: 100%;
-      padding: 1.1rem 2rem 1.1rem 3.8rem;
-      font-family: inherit;
-      font-size: 1.3rem;
-      border: none;
-      background-color: #fff;
-      border-radius: 1.6rem;
-      border: 1px solid #BDBDBD;
-      color: #757575; }
-  .wxchattabs__chatlist {
-    flex-direction: column;
-    overflow-y: auto;
-    z-index: 1;
-    position: relative;
-    background-color: #fff;
-    height: 100%; }
+  z-index: 999;
+}
+.wxchattabs__titlebox {
+  padding: 2.5rem 0.8rem;
+}
+.wxchattabs__titlebox--text {
+  font-size: 1.1rem;
+  letter-spacing: 0.095rem;
+  text-transform: uppercase;
+  color: #757575;
+}
+.wxchattabs__tabview {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  box-shadow: 0px 2px 4px -10px rgba(117, 117, 117, 0.3);
+}
+.wxchattabs__tab {
+  padding: 1.7rem 0;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.wxchattabs__tab:hover {
+  background-color: #eeeeee;
+}
+.wxchattabs__tab--text {
+  letter-spacing: 0.075rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #757575;
+}
+.wxchattabs__searchbox {
+  background-color: #fff;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f5f5f5;
+  background-color: #f5f5f5;
+}
+.wxchattabs__search {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.wxchattabs__search--icon {
+  position: absolute;
+  fill: #9e9e9e;
+  margin-top: 0.7rem;
+  margin-left: 0.8rem;
+}
+.wxchattabs__search--input {
+  width: 100%;
+  padding: 1.1rem 2rem 1.1rem 3.8rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 1.6rem;
+  border: 1px solid #bdbdbd;
+  color: #757575;
+}
+.wxchattabs__chatlist {
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+  height: 100%;
+}
 
 .selected_tab {
-  background-color: #E0E0E0; }
+  background-color: #e0e0e0;
+}
 
 .selected_tab p {
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 .wxchatview {
   flex: 75%;
@@ -206,257 +272,476 @@ img {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  position: relative; }
-  .wxchatview__wrapper {
-    background-color: #F5F5F5;
-    position: absolute;
-    z-index: 999;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2;
-    visibility: visible;
-    opacity: 1; }
-    .wxchatview__wrapper-container {
-      text-align: center; }
-      .wxchatview__wrapper-container--img {
-        border-radius: 50%;
-        width: 150px;
-        object-fit: cover;
-        margin: 0 auto;
-        cursor: pointer;
-        box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s;
-        animation-name: animate_hover;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out; }
-      .wxchatview__wrapper-container--text {
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        font-size: 2rem;
-        font-weight: 500;
-        line-height: 2rem;
-        color: #757575;
-        letter-spacing: 0.065rem; }
-      .wxchatview__wrapper-container--smtext {
-        font-size: 1.3rem;
-        font-weight: 400;
-        color: #4CAF50; }
-  .wxchatview__option-widget {
-    background-color: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 0.6rem;
-    position: absolute;
-    overflow: hidden;
-    top: 5rem;
-    width: 130px;
-    right: 2.5%;
-    z-index: 1;
-    transition: opacity 0.3s;
-    opacity: 0;
-    visibility: hidden; }
-    .wxchatview__option-widget--item {
-      padding: 1rem 1rem;
-      text-align: left;
-      cursor: pointer;
-      background-color: #fff;
-      transition: background-color 0.3s; }
-      .wxchatview__option-widget--item:hover {
-        background-color: #EEEEEE; }
-    .wxchatview__option-widget--text {
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: #757575; }
-  .wxchatview__bgimage {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    z-index: 0;
-    background-color: #fcfcfe;
-    background-position: center;
-    background-repeat: repeat;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23dddddd' fill-opacity='0.4'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-  .wxchatview__header {
-    background-color: #F5F5F5;
-    padding: 1.1rem 0.6rem;
-    z-index: 99;
-    position: relative;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.15); }
-  .wxchatview__header-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center; }
-  .wxchatview__wxbox {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: auto;
-    cursor: pointer; }
-  .wxchatview__imgbox {
-    padding: 0 1.3rem 0 0; }
-    .wxchatview__imgbox--img {
-      object-fit: cover;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50%; }
-  .wxchatview__textview {
-    margin: 0; }
-    .wxchatview__textview--title {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #757575;
-      line-height: 2rem; }
-    .wxchatview__textview--smtext {
-      line-height: 1.5rem;
-      font-weight: 400;
-      font-size: 1.1rem;
-      color: #757575; }
-  .wxchatview__widgets {
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-  .wxchatview__icon-view {
-    margin: 0; }
-    .wxchatview__icon-view--icon {
-      width: 3.5rem;
-      height: 3.5rem;
-      text-align: center;
-      padding: 0.5rem 0.3rem;
-      border-radius: 50%;
-      cursor: pointer;
-      fill: #757575;
-      transition: background-color 0.3s; }
-      .wxchatview__icon-view--icon:hover {
-        background-color: #E0E0E0; }
-  .wxchatview__chat-container {
-    position: relative;
-    z-index: 1;
-    order: 2;
-    flex: 1 1 0px; }
-  .wxchatview__chat-box {
-    z-index: 1;
-    order: 3;
-    background-color: #fcfcfe;
-    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.15);
-    flex: 0 0 auto; }
-    .wxchatview__chat-box--container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      padding: 1.5rem 0rem; }
-    .wxchatview__chat-box--iconview {
-      width: 3.5rem;
-      height: 3.5rem;
-      text-align: center;
-      padding: 0.5rem 0.3rem;
-      border-radius: 50%;
-      cursor: pointer;
-      fill: #757575;
-      margin: 0 0.6rem;
-      transition: background-color 0.3s; }
-      .wxchatview__chat-box--iconview:hover {
-        background-color: #E0E0E0; }
-    .wxchatview__chat-box--boxview {
-      margin: 0;
-      flex: 1; }
-    .wxchatview__chat-box--input {
-      width: 100%;
-      padding: 1.5rem 1rem;
-      font-family: inherit;
-      border-radius: 1rem;
-      border: none;
-      font-size: 1.3rem;
-      border: 1px solid #EEEEEE;
-      color: #757575;
-      background-color: #fff; }
-    .wxchatview__chat-box--widgets {
-      display: flex;
-      flex-direction: row;
-      align-items: center; }
-  .wxchatview__chat-group {
-    position: absolute;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-bottom: 0.5rem;
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column; }
-  .wxchatview__chat-widget {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0px 5%; }
-  .wxchatview__chat-intent {
-    max-width: 40rem;
-    position: relative;
-    margin-bottom: 1rem; }
-    .wxchatview__chat-intent--header {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      padding: 0.7rem 0.5rem; }
-    .wxchatview__chat-intent--smtext {
-      font-size: 1rem;
-      color: #9E9E9E; }
-    .wxchatview__chat-intent--content {
-      padding: 0.5rem;
-      border-radius: 0.4rem; }
-      .wxchatview__chat-intent--content__text {
-        font-size: 1.3rem;
-        padding: 0.5rem 0rem;
-        font-weight: 400;
-        line-height: 1.7rem;
-        color: #EEEEEE; }
-    .wxchatview__chat-intent--img {
-      max-width: 30rem;
-      object-fit: cover;
-      border-radius: 0.3rem;
-      cursor: pointer; }
+  position: relative;
+}
+.wxchatview__wrapper {
+  background-color: #f5f5f5;
+  position: absolute;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2;
+  visibility: visible;
+  opacity: 1;
+}
+.wxchatview__wrapper-container {
+  text-align: center;
+}
+.wxchatview__wrapper-container--img {
+  border-radius: 50%;
+  width: 150px;
+  object-fit: cover;
+  margin: 0 auto;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+  animation-name: animate_hover;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.wxchatview__wrapper-container--text {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #757575;
+  letter-spacing: 0.065rem;
+}
+.wxchatview__wrapper-container--smtext {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #4caf50;
+}
+.wxchatview__option-widget {
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 0.6rem;
+  position: absolute;
+  overflow: hidden;
+  top: 5rem;
+  width: 130px;
+  right: 2.5%;
+  z-index: 1;
+  transition: opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+.wxchatview__option-widget--item {
+  padding: 1rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+.wxchatview__option-widget--item:hover {
+  background-color: #eeeeee;
+}
+.wxchatview__option-widget--text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #757575;
+}
+.wxchatview__bgimage {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  z-index: 0;
+  background-color: #fcfcfe;
+  background-position: center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23dddddd' fill-opacity='0.4'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.wxchatview__header {
+  background-color: #f5f5f5;
+  padding: 1.1rem 0.6rem;
+  z-index: 99;
+  position: relative;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.15);
+}
+.wxchatview__header-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.wxchatview__wxbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: auto;
+  cursor: pointer;
+}
+.wxchatview__imgbox {
+  padding: 0 1.3rem 0 0;
+}
+.wxchatview__imgbox--img {
+  object-fit: cover;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.wxchatview__textview {
+  margin: 0;
+}
+.wxchatview__textview--title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #757575;
+  line-height: 2rem;
+}
+.wxchatview__textview--smtext {
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #757575;
+}
+.wxchatview__widgets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wxchatview__icon-view {
+  margin: 0;
+}
+.wxchatview__icon-view--icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  padding: 0.5rem 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  fill: #757575;
+  transition: background-color 0.3s;
+}
+.wxchatview__icon-view--icon:hover {
+  background-color: #e0e0e0;
+}
+.wxchatview__chat-container {
+  position: relative;
+  z-index: 1;
+  order: 2;
+  flex: 1 1 0px;
+}
+.wxchatview__chat-box {
+  z-index: 1;
+  order: 3;
+  background-color: #fcfcfe;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.15);
+  flex: 0 0 auto;
+}
+.wxchatview__chat-box--container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 0rem;
+}
+.wxchatview__chat-box--iconview {
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  padding: 0.5rem 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  fill: #757575;
+  margin: 0 0.6rem;
+  transition: background-color 0.3s;
+}
+.wxchatview__chat-box--iconview:hover {
+  background-color: #e0e0e0;
+}
+.wxchatview__chat-box--boxview {
+  margin: 0;
+  flex: 1;
+}
+.wxchatview__chat-box--input {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  font-family: inherit;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.3rem;
+  border: 1px solid #eeeeee;
+  color: #757575;
+  background-color: #fff;
+}
+.wxchatview__chat-box--widgets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wxchatview__chat-group {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 0.5rem;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.wxchatview__chat-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0px 5%;
+}
+.wxchatview__chat-intent {
+  max-width: 40rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.wxchatview__chat-intent--header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0.7rem 0.5rem;
+}
+.wxchatview__chat-intent--smtext {
+  font-size: 1rem;
+  color: #9e9e9e;
+}
+.wxchatview__chat-intent--content {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+.wxchatview__chat-intent--content__text {
+  font-size: 1.3rem;
+  padding: 0.5rem 0rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  color: #eeeeee;
+}
+.wxchatview__chat-intent--img {
+  max-width: 30rem;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
 
 .chat-sender-bg {
-  background-color: #a7a7a7; }
+  background-color: #a7a7a7;
+}
 
 .chat-receiver-bg {
-  background-color: #3b4955; }
+  background-color: #3b4955;
+}
 
 .align-flex-start {
-  align-items: flex-start; }
+  align-items: flex-start;
+}
 
 .align-flex-end {
-  align-items: flex-end; }
+  align-items: flex-end;
+}
 
 .widget_open.wxchatview__option-widget {
   opacity: 1;
-  visibility: visible; }
+  visibility: visible;
+}
 
 /*
 * main wrapper
 */
 .wrapper_show.wxchatview__wrapper {
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+}
+
+.exitview {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+.exitview__container {
+  width: 30rem;
+  background-color: #fff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  margin: 15rem auto 0 auto;
+  border-radius: 0.3rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+.exitview__container--title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #757575;
+  margin-bottom: 1.1rem;
+  display: block;
+}
+.exitview__container--btn {
+  background-color: #ef5350;
+  color: #fff;
+  padding: 1rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.055rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+.exitview__container--cbtn {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 1rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.055rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+.exitview__flexview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.exitview_open.exitview {
+  opacity: 1;
+  visibility: visible;
+}
+
+.exitview_open .exitview__container {
+  animation: scaleIn 0.3s forwards ease-in-out;
+}
 
 .wxmain {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .wxcontainer {
   display: flex;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
+
+.formview {
+  background-color: #fff;
+}
+.formview__container {
+  margin: 7rem auto 0 auto;
+  width: 430px;
+  border: 1px solid #e0e0e0;
+  padding: 1.3rem 1rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background-color: inherit;
+}
+@media only screen and (max-width: 37.5em) {
+  .formview__container {
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    border: none;
+  }
+}
+.formview__title {
+  margin-bottom: 2rem;
+}
+.formview__title--text {
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #757575;
+}
+@media only screen and (max-width: 37.5em) {
+  .formview__title--text {
+    text-align: center;
+  }
+}
+.formview__inputbox {
+  position: relative;
+  margin-bottom: 1.3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.formview__inputbox--label {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #757575;
+  margin-bottom: 0.5rem;
+}
+.formview__inputbox--input {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #757575;
+  border: none;
+  border: 1px solid #9e9e9e;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.formview__inputbox--input:hover {
+  border: 1px solid #64b5f6;
+}
+.formview__inputbox--input:focus {
+  border: 1px solid #64b5f6;
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+.formview__inputbox--iconview {
+  position: absolute;
+  fill: #757575;
+  margin-left: -3.5rem;
+  margin-top: 1.3rem;
+  cursor: pointer;
+}
+.formview__inputbox--btn {
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+  background-color: #2196f3;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.formview__inputbox--link {
+  margin-top: 3rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #757575;
+  cursor: pointer;
+}
 
 .navbar {
   top: 0;
@@ -465,67 +750,82 @@ img {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 1rem 1.3rem;
-  display: none; }
-  .navbar__titlebox {
-    visibility: visible;
-    opacity: 1; }
-    .navbar__titlebox--text {
-      text-transform: uppercase;
-      font-size: 1.3rem;
-      letter-spacing: 0.195rem;
-      color: #757575; }
-  .navbar__widgets {
-    display: flex; }
-  .navbar__profile-icon {
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 0.2rem;
-    width: 4.3rem;
-    height: 4.3rem;
-    border-radius: 50%;
-    transition: all 0.3s; }
-    .navbar__profile-icon:hover {
-      background-color: #9E9E9E; }
-    .navbar__profile-icon--img {
-      margin: 0 auto;
-      object-fit: cover;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50%; }
+  display: none;
+}
+.navbar__titlebox {
+  visibility: visible;
+  opacity: 1;
+}
+.navbar__titlebox--text {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.195rem;
+  color: #757575;
+}
+.navbar__widgets {
+  display: flex;
+}
+.navbar__profile-icon {
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 0.2rem;
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.navbar__profile-icon:hover {
+  background-color: #9e9e9e;
+}
+.navbar__profile-icon--img {
+  margin: 0 auto;
+  object-fit: cover;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
 
 .sidebar {
   height: 100%;
   background-color: #1c262f;
-  z-index: 999; }
-  .sidebar__container {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem 0.5rem;
-    height: 100%;
-    justify-content: space-between; }
-  .sidebar__iconview {
-    margin-bottom: auto;
-    padding: 1rem 0.8rem; }
-    .sidebar__iconview--img {
-      object-fit: cover;
-      width: 35px; }
-  .sidebar__widgets {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: auto; }
-  .sidebar__icon-button {
-    text-align: center;
-    padding: 1.3rem 1.3rem;
-    fill: #EEEEEE;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: all 0.3s; }
-    .sidebar__icon-button:hover {
-      background-color: #283744; }
-  .sidebar__wxwidget {
-    margin: 0; }
+  z-index: 999;
+}
+.sidebar__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem;
+  height: 100%;
+  justify-content: space-between;
+}
+.sidebar__iconview {
+  margin-bottom: auto;
+  padding: 1rem 0.8rem;
+}
+.sidebar__iconview--img {
+  object-fit: cover;
+  width: 35px;
+}
+.sidebar__widgets {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+.sidebar__icon-button {
+  text-align: center;
+  padding: 1.3rem 1.3rem;
+  fill: #eeeeee;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: all 0.3s;
+}
+.sidebar__icon-button:hover {
+  background-color: #283744;
+}
+.sidebar__wxwidget {
+  margin: 0;
+}
 
 .contactview {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
@@ -536,92 +836,116 @@ img {
   top: 0;
   z-index: 999;
   visibility: hidden;
-  opacity: 0; }
-  .contactview__container {
-    margin: 8.5rem auto 0rem auto;
-    width: 60rem;
-    background-color: #fff;
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.5rem;
-    padding-bottom: 2rem;
-    overflow-y: scroll; }
-  .contactview__header {
-    padding: 1.1rem 0rem; }
-    .contactview__header--iconview {
-      width: 3.5rem;
-      height: 3.5rem;
-      text-align: center;
-      padding: 0.5rem 0.3rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      fill: #757575; }
-      .contactview__header--iconview:hover {
-        background-color: #EEEEEE; }
-  .contactview__searchbox {
-    padding: 0.5rem 0.5rem; }
-    .contactview__searchbox--input {
-      padding: 1.5rem 1rem;
-      border: none;
-      width: 100%;
-      color: #757575;
-      border: 1px solid #EEEEEE;
-      border-radius: 0.6rem;
-      font-family: inherit;
-      font-size: 1.3rem; }
-  .contactview__output-grid {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-    overflow-y: scroll;
-    max-height: 33rem;
-    padding: 0.5rem 1.5rem; }
-  .contactview__card-view {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    transition: background-color 0.3s;
-    margin-bottom: 0.5rem;
-    padding: 0.5rem 0.8rem;
-    border-radius: 0.3rem;
-    cursor: pointer; }
-    .contactview__card-view:hover {
-      background-color: #F5F5F5; }
-  .contactview__imgbox {
-    margin-right: auto; }
-    .contactview__imgbox--img {
-      width: 6.5rem;
-      height: 6.5rem;
-      object-fit: cover;
-      border-radius: 50%; }
-  .contactview__textview {
-    flex: 1;
-    text-align: left;
-    padding-left: 0.8rem; }
-    .contactview__textview--text {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #757575;
-      line-height: 2rem; }
-    .contactview__textview--smtext {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #757575;
-      line-height: 1.5rem; }
-  .contactview__btn-view {
-    text-align: center; }
-    .contactview__btn-view--add {
-      border: none;
-      padding: 0.5rem 0.8rem;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      background-color: #2196F3;
-      border-radius: 0.3rem;
-      fill: #EEEEEE;
-      cursor: pointer; }
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.contactview__container {
+  margin: 8.5rem auto 0rem auto;
+  width: 60rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+.contactview__header {
+  padding: 1.1rem 0rem;
+}
+.contactview__header--iconview {
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  padding: 0.5rem 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  fill: #757575;
+}
+.contactview__header--iconview:hover {
+  background-color: #eeeeee;
+}
+.contactview__searchbox {
+  padding: 0.5rem 0.5rem;
+}
+.contactview__searchbox--input {
+  padding: 1.5rem 1rem;
+  border: none;
+  width: 100%;
+  color: #757575;
+  border: 1px solid #eeeeee;
+  border-radius: 0.6rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+}
+.contactview__output-grid {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  overflow-y: scroll;
+  max-height: 33rem;
+  padding: 0.5rem 1.5rem;
+}
+.contactview__card-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: background-color 0.3s;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.contactview__card-view:hover {
+  background-color: #f5f5f5;
+}
+.contactview__imgbox {
+  margin-right: auto;
+}
+.contactview__imgbox--img {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.contactview__textview {
+  flex: 1;
+  text-align: left;
+  padding-left: 0.8rem;
+}
+.contactview__textview--text {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #757575;
+  line-height: 2rem;
+}
+.contactview__textview--smtext {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #757575;
+  line-height: 1.5rem;
+}
+.contactview__btn-view {
+  text-align: center;
+}
+.contactview__btn-view--add {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  background-color: #2196f3;
+  border-radius: 0.3rem;
+  fill: #eeeeee;
+  cursor: pointer;
+}
 
 .contactsearch_open.contactview {
   opacity: 1;
-  visibility: visible; }
+  visibility: visible;
+}
+
+.contactsearch_open .contactview__container {
+  animation: scaleIn 0.3s forwards ease-in-out;
+}
 
 .notificationview {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
@@ -632,94 +956,113 @@ img {
   top: 0;
   z-index: 999;
   visibility: hidden;
-  opacity: 0; }
-  .notificationview__container {
-    width: 55rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: 0.5rem;
-    padding-bottom: 2rem; }
-  .notificationview__titlebox {
-    padding: 1rem 0.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15); }
-    .notificationview__titlebox--iconview {
-      width: 3.5rem;
-      height: 3.5rem;
-      text-align: center;
-      padding: 0.5rem 0.3rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      fill: #757575; }
-      .notificationview__titlebox--iconview:hover {
-        background-color: #EEEEEE; }
-    .notificationview__titlebox--text {
-      margin-left: -1rem;
-      flex: 1;
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: 0.065rem;
-      color: #757575; }
-  .notificationview__listview {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0.5rem;
-    height: 40rem;
-    padding-bottom: 2rem;
-    overflow-y: scroll; }
-  .notificationview__card {
-    display: flex;
-    flex-direction: row;
-    transition: background-color 0.3s;
-    padding: 0.7rem 0.3rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    border-radius: 0.4rem;
-    border: 1px solid #EEEEEE;
-    cursor: pointer; }
-    .notificationview__card:hover {
-      background-color: #F5F5F5; }
-  .notificationview__imgbox {
-    margin: 0 1rem; }
-    .notificationview__imgbox--img {
-      border-radius: 50%;
-      width: 6rem;
-      height: 6rem;
-      object-fit: cover; }
-  .notificationview__textview {
-    text-align: left;
-    padding-top: 0.4rem; }
-    .notificationview__textview--title {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #757575; }
-  .notificationview__btnlist {
-    display: flex;
-    flex-direction: row;
-    padding-top: 1rem; }
-    .notificationview__btnlist--btn {
-      border: none;
-      font-family: inherit;
-      font-size: 1.3rem;
-      color: #EEEEEE;
-      padding: 0.5rem;
-      margin: 0 0.3rem;
-      border-radius: 0.3rem;
-      cursor: pointer; }
+  opacity: 0;
+  transition: all 0.3s;
+}
+.notificationview__container {
+  width: 55rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding-bottom: 2rem;
+}
+.notificationview__titlebox {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+}
+.notificationview__titlebox--iconview {
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  padding: 0.5rem 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  fill: #757575;
+}
+.notificationview__titlebox--iconview:hover {
+  background-color: #eeeeee;
+}
+.notificationview__titlebox--text {
+  margin-left: -1rem;
+  flex: 1;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.065rem;
+  color: #757575;
+}
+.notificationview__listview {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  height: 40rem;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+}
+.notificationview__card {
+  display: flex;
+  flex-direction: row;
+  transition: background-color 0.3s;
+  padding: 0.7rem 0.3rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+}
+.notificationview__card:hover {
+  background-color: #f5f5f5;
+}
+.notificationview__imgbox {
+  margin: 0 1rem;
+}
+.notificationview__imgbox--img {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+.notificationview__textview {
+  text-align: left;
+  padding-top: 0.4rem;
+}
+.notificationview__textview--title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #757575;
+}
+.notificationview__btnlist {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+}
+.notificationview__btnlist--btn {
+  border: none;
+  font-family: inherit;
+  font-size: 1.3rem;
+  color: #eeeeee;
+  padding: 0.5rem;
+  margin: 0 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
 
 .accept-light {
-  background-color: #43A047; }
+  background-color: #43a047;
+}
 
 .decline-light {
-  background-color: #f44336; }
+  background-color: #f44336;
+}
 
 .notificationview_open.notificationview {
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+}

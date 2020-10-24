@@ -12,6 +12,7 @@
 
     visibility: hidden;
     opacity: 0;
+    transition: all 0.3s;
 
     &__container {
         width: 55rem;

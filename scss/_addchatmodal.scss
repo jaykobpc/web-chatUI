@@ -12,19 +12,17 @@
 
     visibility: hidden;
     opacity: 0;
+    transition: opacity 0.3s;
 
     &__container {
         margin: 8.5rem auto 0rem auto;
         width: 60rem;
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
         background-color: $color-white;
         border-radius: 0.5rem;
         padding: 0.5rem 0.5rem;
         padding-bottom: 2rem;
         overflow-y: scroll;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
     }
 
     &__header {
@@ -130,3 +128,8 @@
     opacity: 1;
     visibility: visible;
 }
+
+.contactsearch_open .contactview__container {
+    animation: scaleIn 0.3s forwards ease-in-out;
+}
+

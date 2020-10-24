@@ -9,7 +9,7 @@
     <script src="./node_modules/vue/dist/vue.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link href="./css/app.build.css" rel="stylesheet">
-    <title>Chat-app/Home</title>
+    <title>Lithium/Home</title>
 </head>
 
 <body translate="no" class="no-select">
@@ -29,20 +29,20 @@
                                 d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z" />
                         </svg>
                     </div>
-                    <div title="New Chat" class="sidebar__icon-button">
+                    <div id="search_contact" title="New Chat" class="sidebar__icon-button">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path
                                 d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                         </svg>
                     </div>
-                    <div title="Notifications" class="sidebar__icon-button">
+                    <div id="show_notifications" title="Notifications" class="sidebar__icon-button">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path
                                 d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
                         </svg>
                     </div>
-                    <div title="Settings" class="sidebar__icon-button">
+                    <div id="show_settings" title="Settings" class="sidebar__icon-button">
                         <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
                             viewBox="0 0 24 24" width="24">
                             <g>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="sidebar__wxwidget">
-                    <div title="Logout" class="sidebar__icon-button">
+                    <div id="show_exitview" class="sidebar__icon-button">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path
@@ -84,10 +84,10 @@
                         <h3 class="wxchattabs__titlebox--text">All Conversations</h3>
                     </div>
                     <div class="wxchattabs__tabview">
-                        <div title="Recent" class="wxchattabs__tab">
+                        <div title="Recent" class="wxchattabs__tab selected_tab">
                             <p class="wxchattabs__tab--text">Recent</p>
                         </div>
-                        <div title="Archives" class="wxchattabs__tab selected_tab">
+                        <div title="Archives" class="wxchattabs__tab">
                             <p class="wxchattabs__tab--text">Archived</p>
                         </div>
                         <div title="Blocked" class="wxchattabs__tab">
@@ -115,7 +115,7 @@
 
                         </div>
                         <!--chat list container-->
-                        <div class="wxchattabs__chatlist-container">
+                        <div v-for="(n,index) in 0" :key="index" class="wxchattabs__chatlist-container">
                             <div class="wxchatcard">
                                 <div class="wxchatcard__imgbox">
                                     <img draggable="false" src="./img/profile_img.jpeg" alt="Profile"
@@ -307,10 +307,10 @@
             </div>
         </main>
         <!--add contacts modal-->
-        <div class="contactview">
+        <div id="contactview" class="contactview">
             <div class="contactview__container">
-                <div title="Back" class="contactview__header">
-                    <div class="contactview__header--iconview">
+                <div class="contactview__header">
+                    <div title="Back" id="contactview_close" class="contactview__header--iconview">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
@@ -343,10 +343,10 @@
             </div>
         </div>
         <!--notifications modal-->
-        <div class="notificationview">
+        <div id="notificationview" class="notificationview">
             <div class="notificationview__container">
                 <div class="notificationview__titlebox">
-                    <div title="Back" class="notificationview__titlebox--iconview">
+                    <div id="notificationview_close" class="notificationview__titlebox--iconview">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
@@ -370,9 +370,20 @@
                 </div>
             </div>
         </div>
+        <!--end session modal-->
+        <div id="exitview" class="exitview">
+            <div class="exitview__container">
+                <h3 class="exitview__container--title">Do you want to logout?</h3>
+                <div class="exitview__flexview">
+                    <a href="#/logout" class="exitview__container--btn">Logout</a>
+                    <button id="exitview-close" class="exitview__container--cbtn">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="./scripts/app.js" defer></script>
+    <script src="./scripts/mods.utils.js" defer></script>
 </body>
 
 </html>

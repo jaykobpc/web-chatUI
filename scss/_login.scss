@@ -1,0 +1,106 @@
+.formview {
+    background-color: $color-white;
+
+    &__container {
+        margin: 7rem auto 0 auto;
+        width: 430px;
+        border: 1px solid $color-grey-300;
+        padding: 1.3rem 1rem;
+        border-radius: 0.6rem;
+        overflow: hidden;
+        background-color: inherit;
+
+        @include respond(phone) {
+            width: 100%;
+            margin: 2rem auto 0 auto;
+            border: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+
+        &--text {
+            font-family: inherit;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: $color-grey-600;
+
+            @include respond(phone) {
+                text-align: center;
+            }
+        }
+    }
+
+    &__inputbox {
+        position: relative;
+        margin-bottom: 1.3rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+
+        &--label {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: $color-grey-600;
+            margin-bottom: 0.5rem;
+        }
+
+        &--input {
+            width: 100%;
+            padding: 1.5rem 1rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: $color-grey-600;
+            border: none;
+            border: 1px solid $color-grey-500;
+            border-radius: 0.4rem;
+            background-color: $color-white;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                border: 1px solid $color-blue-300;
+            }
+
+            &:focus {
+                border: 1px solid $color-blue-300;
+                box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+            }
+        }
+
+        &--iconview {
+            position: absolute;
+            fill: $color-grey-600;
+            margin-left: -3.5rem;
+            margin-top: 1.3rem;
+            cursor: pointer;
+        }
+
+        &--btn {
+            margin-top: 0.6rem;
+            margin-bottom: 1rem;
+            background-color: $color-blue;
+            color: $color-white;
+            font-family: inherit;
+            font-size: 1.5rem;
+            font-weight: 500;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 1.5rem;
+            border-radius: 0.4rem;
+            cursor: pointer;
+        }
+
+        &--link {
+            margin-top: 3rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: $color-grey-600;
+            cursor: pointer;
+        }
+    }
+}
